@@ -10,7 +10,10 @@
 
     <div id="test">
 
-            {{ grade }}
+           <p v-if="mark>80"> {{ grade }} </p>
+
+
+            <img v-bind:src="imageloc"/>
 
     </div>
 
@@ -18,7 +21,9 @@
 const app = Vue.createApp({
     data : function(){
         return {
-            grade: 'A'
+            grade: 'A',
+            imageloc:'hello.jpg',
+            mark:0
 
         }
         
