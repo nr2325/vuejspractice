@@ -35,8 +35,27 @@
 
         <button type="button" v-on:click="makealert">click</button>
 
+<!-- variable use in css -->
+        <p 
+        :style="{backgroundColor: bc, color: tc}">  This is a text         
+            </p>
 
-        <p   :style="{background-color: bc, color: tc}">This is a text</p>
+
+            <span>{{ sum }}</span>
+
+
+            <div>
+
+                <p>hello,this is a component</p>
+                
+            </div>
+
+
+
+           
+
+
+
 
 
 
@@ -61,8 +80,9 @@
                             1, 5, 11
 
                         ],
-                        bc:'red',
-                        tc:'green'
+                        bc:'gray',
+                        tc:'blue'
+                      
                 }
             },
             methods: {
@@ -71,6 +91,16 @@
 
                     alert('you clicked');
                 }
+            },
+            computed:{
+
+                sum(){
+
+
+                    return 2+2;
+                }
+
+
             }
 
 
