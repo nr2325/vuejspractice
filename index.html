@@ -1,41 +1,85 @@
 <html>
+
 <head>
-<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
 
 </head>
+
 <body>
 
 
 
     <div id="test">
 
-           <p v-if="mark>80"> {{ grade }} </p>
+        <p v-if="mark>80"> {{ grade }} </p>
 
 
-            <img v-bind:src="imageloc"/>
+        <img v-bind:src="imageloc" />
+
+
+        <!-- simple for loop -->
+        <ul>
+            <li :key="numbers.no" v-for="no in numbers">
+                {{ no }}
+            </li>
+        </ul>
+
+        <!-- naming index for loop -->
+        <ul :key="foods.food" v-for="food in foods">
+
+
+            <li>{{food.name}}</li>
+
+        </ul>
+
+        <button type="button" v-on:click="makealert">click</button>
+
+
+        <p   :style="{background-color: bc, color: tc}">This is a text</p>
+
+
+
 
     </div>
 
-<script>
-const app = Vue.createApp({
-    data : function(){
-        return {
-            grade: 'A',
-            imageloc:'hello.jpg',
-            mark:0
-
-        }
-        
-
-    }
+    <script>
+        const app = Vue.createApp({
+            data: function () {
+                return {
+                    grade: 'A',
+                    imageloc: 'hello.jpg',
+                    mark: 0,
+                    foods:
+                        [
+                            { name: "apple" }
 
 
+                        ],
+                    numbers:
+                        [
+                            1, 5, 11
 
-});
+                        ],
+                        bc:'red',
+                        tc:'green'
+                }
+            },
+            methods: {
 
-const mountapp = app.mount("#test");
+                makealert() {
 
-</script>
+                    alert('you clicked');
+                }
+            }
+
+
+
+        });
+
+        const mountapp = app.mount("#test");
+
+    </script>
 </body>
+
 </html>
