@@ -36,19 +36,14 @@
         <button type="button" v-on:click="makealert">click</button>
 
 <!-- variable use in css -->
-        <p 
-        :style="{backgroundColor: bc, color: tc}">  This is a text         
+        <p :style="{backgroundColor: bc, color: tc}">  This is a text         
             </p>
 
 
             <span>{{ sum }}</span>
 
 
-            <div>
-
-                <p>hello,this is a component</p>
-                
-            </div>
+            <sample-component></sample-component>
 
 
 
@@ -107,9 +102,16 @@
 
         });
 
-        const mountapp = app.mount("#test");
+     
 
     </script>
+
+<script src="components/c.js"></script>
+
+<script>
+       const mountapp = app.mount("#test");
+</script>
+
 </body>
 
 </html>
